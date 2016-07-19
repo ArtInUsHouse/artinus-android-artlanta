@@ -34,27 +34,24 @@ public class SecondaryFragment
   private final List<Photo> photos = new ArrayList<>();
 
   @Override
-  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-  {
+  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     final View view = inflater.inflate(R.layout.main_activity, null);
 
     carousel = (Carousel) view.findViewById(R.id.carousel);
 
-    photos.add(new Photo("Photo1", "fotolia_40649376"));
-    photos.add(new Photo("Photo2", "fotolia_40973414"));
-    photos.add(new Photo("Photo3", "fotolia_48275073"));
+    photos.add(new Photo("Photo1", "artlanta_red"));
+    photos.add(new Photo("Photo2", "artlanta_events"));
+    photos.add(new Photo("Photo3", "fotolia_61643329"));
     photos.add(new Photo("Photo4", "fotolia_50806609"));
-    photos.add(new Photo("Photo5", "fotolia_61643329"));
+    photos.add(new Photo("Photo5", "artlanta_frame"));
 
     adapter = new MyAdapter(getActivity(), photos);
     carousel.setAdapter(adapter);
     adapter.notifyDataSetChanged();
 
-    carousel.setOnItemClickListener(new OnItemClickListener()
-    {
+    carousel.setOnItemClickListener(new OnItemClickListener() {
       @Override
-      public void onItemClick(CarouselBaseAdapter<?> carouselBaseAdapter, View view, int position, long l)
-      {
+      public void onItemClick(CarouselBaseAdapter<?> carouselBaseAdapter, View view, int position, long l) {
         Toast.makeText(getActivity().getApplicationContext(), "The item '" + position + "' has been clicked", Toast.LENGTH_SHORT).show();
         carousel.scrollToChild(position);
       }
