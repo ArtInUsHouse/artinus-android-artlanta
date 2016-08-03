@@ -22,38 +22,6 @@ public class Splash extends ActionBarActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.splash_screen);
 
-//        ImageView imageView = (ImageView)findViewById(R.id.imageView);
-//        imageView.setImageResource(R.drawable.artlanta_blue);
-
-//        ImageView imageView = (ImageView)findViewById(R.id.flaganim);
-//        imageView.setImageResource(R.drawable.flag);
-//
-//        AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getDrawable();
-//        frameAnimation.start();
-
-//        final ImageView iv = (ImageView) findViewById(R.id.imageView);
-//        final Animation an = AnimationUtils.loadAnimation(getBaseContext(), R.anim.gif);
-//
-//        iv.startAnimation(an);
-//        an.setAnimationListener(new Animation.AnimationListener() {
-//            @Override
-//            public void onAnimationStart(Animation animation) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animation animation) {
-//                finish();
-//                Intent startMainScreen = new Intent(getApplicationContext(), MainActivity.class);
-////              startActivity(startMainScreen);
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animation animation) {
-//
-//            }
-//        });
-
         Thread splashThread = new Thread() {
             @Override
             public void run() {

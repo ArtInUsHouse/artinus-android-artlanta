@@ -1,12 +1,16 @@
 <manifest
   xmlns:android="http://schemas.android.com/apk/res/android"
-  package="fr.rolandl.sample.carousel"
->
+  package="fr.rolandl.sample.carousel">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
   <application
     android:allowBackup="true"
     android:label="@string/app_name"
-    android:icon="@drawable/ic_launcher"
+    android:icon="@drawable/artlanta_red"
+    android:logo="@drawable/artlanta_red"
     android:theme="@style/AppTheme" >
 
     <activity
@@ -19,11 +23,35 @@
 
     <activity
       android:name=".MainActivity"
+        android:logo="@drawable/artlanta_red"
+        android:icon="@drawable/artlanta_red"
       android:configChanges="orientation|keyboardHidden|screenLayout">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
-        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.PARENT_ACTIVITY"/>
       </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".Welcome"
+        android:label="@string/welcome_activity"
+        android:parentActivityName=".MainActivity">
+
+      <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".MainActivity"/>
+
+    </activity>
+
+    <activity
+        android:name=".Video"
+        android:label="@string/video_activity"
+        android:parentActivityName=".MainActivity">
+
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".MainActivity"/>
+
     </activity>
 
     <activity
