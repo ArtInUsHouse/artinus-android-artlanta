@@ -19,7 +19,7 @@
 -keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
 -dontobfuscate
 -dontoptimize
--dontwarn okio.** # added
+-dontwarn okio.** # added //TODO look up okio
 -dontwarn com.squareup.okhttp.** # added
 
 -keep class !android.support.v7.internal.view.menu.**, ** { *; }

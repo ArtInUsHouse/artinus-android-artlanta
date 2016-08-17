@@ -4,6 +4,9 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+
 import fr.rolandl.carousel.CarouselAdapter;
 import fr.rolandl.carousel.CarouselItem;
 import fr.rolandl.sample.carousel.R;
@@ -44,7 +47,10 @@ public final class MyAdapter
     @Override
     public void update(Photo photo)
     {
-      image.setImageResource(getResources().getIdentifier(photo.image, "drawable", context.getPackageName()));
+      Glide.with(context)
+              .load(getResources().getIdentifier(photo.image, "drawable", context.getPackageName()))
+              .centerCrop()
+              .into(image);
       name.setText(photo.name);
     }
 
