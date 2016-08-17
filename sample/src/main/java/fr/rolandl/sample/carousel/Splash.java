@@ -11,8 +11,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+
 /**
- * Created by Godfather on 7/12/2016.
+ * Created by GodfatherFrancis on 7/12/2016.
  */
 public class Splash extends ActionBarActivity {
 
@@ -21,12 +23,16 @@ public class Splash extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.splash_screen);
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        Glide.with(this)
+                .load(R.drawable.rsz_artlanta_red)
+                .into(imageView);
 
         Thread splashThread = new Thread() {
             @Override
             public void run() {
                 try {
-                    sleep(3000);
+                    sleep(2200);
                     Intent startMainScreen = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(startMainScreen);
                     finish();

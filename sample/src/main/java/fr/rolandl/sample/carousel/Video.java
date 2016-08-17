@@ -16,7 +16,7 @@ import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.google.android.youtube.player.YouTubePlayerView;
 
 /**
- * Created by Godfather on 7/19/2016.
+ * Created by GodfatherFrancis on 7/19/2016.
  */
 public class Video extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
@@ -35,27 +35,6 @@ public class Video extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 
         YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.view);
         youTubePlayerView.initialize(API_KEY, this);
-
-//        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
-//            @Override
-//            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-//                youTubePlayer.loadVideo("a4NT5iBFuZs");
-//            }
-//
-//            @Override
-//            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-//
-//            }
-//        };
-
-//        play = (Button) findViewById(R.id.button);
-//        play.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View view) {
-//                youTubePlayerView.initialize("AIzaSyAF8AHkBeBay5kGe_DGXbAbmscOO7r3ddA", onInitializedListener);
-//            }
-//        });
 
     }
 
