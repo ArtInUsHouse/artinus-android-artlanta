@@ -58,15 +58,10 @@ public final class MainActivity
 
     carousel = (Carousel) findViewById(R.id.carousel);
 
-    // TODO use glide/picosso to load photos
-//    Glide.with(this)
-//            .load(R.drawable.artlanta_red)
-//            .into()
-
-    photos.add(new Photo("", "rsz_artlanta_red"));
-    photos.add(new Photo("", "rsz_artlanta_events"));
-    photos.add(new Photo("", "youtube"));
-    photos.add(new Photo("", "rsz_artlanta_shop"));
+    photos.add(new Photo("rsz_artlanta_red"));
+    photos.add(new Photo("rsz_artlanta_events"));
+    photos.add(new Photo("youtube"));
+    photos.add(new Photo("rsz_artlanta_shop"));
 
     adapter = new MyAdapter(this, photos);
     carousel.setAdapter(adapter);

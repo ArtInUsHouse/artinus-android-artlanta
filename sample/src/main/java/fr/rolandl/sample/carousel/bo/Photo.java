@@ -12,13 +12,16 @@ public final class Photo
 
   private static final long serialVersionUID = 1L;
 
-  public final String name;
+  public String name;
 
   public final String image;
 
-  public Photo(String name, String image)
-  {
+  public Photo(String name, String image) {
     this.name = name;
+    this.image = image;
+  }
+
+  public Photo(String image) {
     this.image = image;
   }
 
