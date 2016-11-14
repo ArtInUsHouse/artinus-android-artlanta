@@ -35,7 +35,7 @@ public class SecondaryFragment
 
   @Override
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-    final View view = inflater.inflate(R.layout.main_activity, null);
+    final View view = inflater.inflate(R.layout.activity_main, null);
 
     carousel = (Carousel) view.findViewById(R.id.carousel);
 

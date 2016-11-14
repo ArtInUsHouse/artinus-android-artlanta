@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ARTlanta Gallery</string>
+    <string name="app_name">ARTlanta GALLERY</string>
     <string name="welcome_activity">About ARTlanta</string>
     <string name="event_activity">ARTlanta Events</string>
     <string name="shop_activity">Shop ARTlanta</string>
@@ -8,6 +8,18 @@
     <string name="activityStaticFragment">Activity with fragment (static)</string>
     <string name="activityFragment">Activity with fragment (transaction)</string>
 
-    <string name="welcome_statement">The Artlanta Gallery was started with a vision to PROVIDE three things: to PROVIDE exposure for under exposed artists, to PROVIDE an alternative urban space to create and conjugate at, and to PROVIDE enrichment for the surrounding community</string>
-    <string name="owner_statement">He was born in Essex County, New Jersey. After the loss of his parents at the young age of 12, he got a record deal, toured around the world for a while before settling down in Atlanta 16 years ago. Atlanta is where he got into tattooing and curating events, both of which led to his realization of the need for an epicenter for the renaissance thus the Wolfs Den Art Gallery/Restuarant was born. The opening for that was November 2014. The lifespan of the Wolfs Den was short lived as the need for a bigger space was prominent.  The grand opening of the Artlanta Gallery replaced the Wolfs Den on October 2, 2015! In the near future Tyree hopes to open up similar art galleries across the states.</string>
+    <string name="gallery_name">ARTlanta GALLERY</string>
+    <string name="welcome_statement">Started with a vision to PROVIDE:</string>
+    <string name="welcome_bullet_one">&#8226; exposure for under exposed artists<br/></string>
+    <string name="welcome_bullet_two">&#8226; an alternative urban space to create and conjugate to<br/></string>
+    <string name="welcome_bullet_three">&#8226; enrichment for the surrounding community<br/></string>
+    <string name="owner_statement">Born in Essex County, New Jersey. After the loss of his parents at the young age of 12, he got a record deal, toured around the world for a while before settling down in Atlanta 16 years ago. Atlanta is where he got into tattooing and curating events, both of which led to his realization of the need for an epicenter for the renaissance thus the Wolfs Den Art Gallery/Restuarant was born. The opening for that was November 2014. The lifespan of the Wolfs Den was short lived as the need for a bigger space was prominent.  The grand opening of the Artlanta Gallery replaced the Wolfs Den on October 2, 2015! In the near future Tyree hopes to open up similar art galleries across the states.</string>
+    <string name="owner_name">Tyree Smith</string>
+    <string name="gallery_hours">Hours of Operation</string>
+    <string name="gallery_hours_days">Monday through friday</string>
+    <string name="gallery_hours_time">12pm-6pm</string>
+
+    <string name="gallery_location">ARTlanta GALLERY</string>
+    <string name="gallery_address">645 Shelton Ave</string>
+    <string name="gallery_zip_code">Atlanta GA 30310</string>
 </resources>

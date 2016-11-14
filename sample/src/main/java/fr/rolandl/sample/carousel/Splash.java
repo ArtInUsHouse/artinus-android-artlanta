@@ -1,14 +1,8 @@
 package fr.rolandl.sample.carousel;
 
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -22,17 +16,23 @@ public class Splash extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.splash_screen);
+        setContentView(R.layout.activity_splash_screen);
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
-        Glide.with(this)
-                .load(R.drawable.rsz_artlanta_red)
-                .into(imageView);
+
+        // TODO fix gif
+        if(imageView != null) {
+            Glide.with(this)
+                    .load(R.drawable.red_blue_yellow_slow)
+                    .asGif()
+                    .error(R.drawable.red_blue_yellow_slow)
+                    .into(imageView);
+        }
 
         Thread splashThread = new Thread() {
             @Override
             public void run() {
                 try {
-                    sleep(2200);
+                    sleep(4000);
                     Intent startMainScreen = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(startMainScreen);
                     finish();

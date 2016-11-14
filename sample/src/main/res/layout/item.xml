@@ -7,9 +7,8 @@
 >
   <ImageView
     android:id="@+id/image"
-    android:layout_width="150dip"
-    android:layout_height="150dip"
-    android:scaleType="centerCrop"
+    android:layout_width="135dip"
+    android:layout_height="135dip"
   />
 
   <TextView

@@ -14,43 +14,79 @@
         android:paddingTop="16dp">
 
         <TextView
+            android:id="@+id/textviewgalleryname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/gallery_name"
+            android:textSize="20sp"/>
+
+        <TextView
             android:id="@+id/textview1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/welcome_statement" />
+
+        <TextView
+            android:id="@+id/bullet_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_bullet_one" />
+
+        <TextView
+            android:id="@+id/bullet_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_bullet_two" />
+
+        <TextView
+            android:id="@+id/bullet_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_bullet_three" />
 
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
 
                 <ImageView
                     android:id="@+id/imageView01"
                     android:layout_width="wrap_content"
-                    android:layout_height="250dp" />
+                    android:layout_height="175dp" />
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
-                    android:layout_height="250dp" />
+                    android:layout_height="175dp" />
 
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="wrap_content"
-                    android:layout_height="250dp" />
+                    android:layout_height="175dp" />
 
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="wrap_content"
-                    android:layout_height="250dp" />
+                    android:layout_height="175dp" />
 
             </LinearLayout>
         </HorizontalScrollView>
 
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="225dp" />
+
+        <TextView
+            android:id="@+id/textviewownername"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/owner_name"
+            android:textSize="20sp"/>
         <TextView
             android:id="@+id/textview2"
             android:layout_width="match_parent"

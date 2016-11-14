@@ -17,7 +17,7 @@ public class Instagram extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.events_activity);
+        setContentView(R.layout.activity_events);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Log.i(TAG, "onCreate");
 

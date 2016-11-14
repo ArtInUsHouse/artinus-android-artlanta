@@ -9,7 +9,7 @@ import android.webkit.WebViewClient;
 /**
  * Created by GodfatherFrancis on 7/19/2016.
  */
-public class Events extends ActionBarActivity {
+public class Store extends ActionBarActivity {
 
     public static final String ANONYMOUS_OAUTH_TOKEN = "IQNBS3TYXBPVI43NO76R";
     public static final String PERSONAL_OAUTH_TOKEN = "2DB7O2HHUISEBAMDPUOC";
@@ -17,15 +17,16 @@ public class Events extends ActionBarActivity {
     public static final String CLIENT_SECRET = "TJZCR43FBGANWVOM4IY5L5QTVMGAHCWYPPKFTB75UKSC26E5HT";
     public static final String USER_URL = "https://www.eventbriteapi.com/v3/users/me/?token=2DB7O2HHUISEBAMDPUOC";
     public static final String USER_EVENTS_URL = "https://www.eventbriteapi.com/v3/users/me/owned_events/?token=2DB7O2HHUISEBAMDPUOC";
-    public static final String WEBVIEW_URL = "http://www.eventbrite.com/o/artlanta-gallery-8171465641";
-    public static final String TAG = "Eventbrite";
+    public static final String WEBVIEW_URL = "http://www.artlantagallery.com/#!shop/plxr3";
+    public static final String TAG = "Store";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_events);
+        setContentView(R.layout.activity_location);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Log.i(TAG, "onCreate");
+        setTitle("Shop ARTlanta");
 
         WebView webView = (WebView) findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);

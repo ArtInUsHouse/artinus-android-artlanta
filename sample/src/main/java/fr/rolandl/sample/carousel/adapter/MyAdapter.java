@@ -49,7 +49,6 @@ public final class MyAdapter
     {
       Glide.with(context)
               .load(getResources().getIdentifier(photo.image, "drawable", context.getPackageName()))
-              .centerCrop()
               .into(image);
       name.setText(photo.name);
     }

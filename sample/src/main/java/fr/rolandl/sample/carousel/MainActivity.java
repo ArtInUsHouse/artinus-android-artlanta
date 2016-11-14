@@ -1,14 +1,10 @@
 package fr.rolandl.sample.carousel;
 
-import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
-import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,6 +14,9 @@ import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import fr.rolandl.carousel.Carousel;
 import fr.rolandl.carousel.CarouselAdapter;
 import fr.rolandl.carousel.CarouselBaseAdapter;
@@ -25,8 +24,6 @@ import fr.rolandl.carousel.CarouselBaseAdapter.OnItemClickListener;
 import fr.rolandl.carousel.CarouselBaseAdapter.OnItemLongClickListener;
 import fr.rolandl.sample.carousel.adapter.MyAdapter;
 import fr.rolandl.sample.carousel.bo.Photo;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Ludovic ROLAND
@@ -51,17 +48,20 @@ public final class MainActivity
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 //    getSupportActionBar().hide();
-    setContentView(R.layout.main_activity);
+    setContentView(R.layout.activity_main);
     getSupportActionBar().setDisplayShowHomeEnabled(true);
 //    getSupportActionBar().setIcon(R.drawable.artlanta_red);
-    setTitle("ARTlanta");
+    setTitle("ARTlanta GALLERY");
 
     carousel = (Carousel) findViewById(R.id.carousel);
 
-    photos.add(new Photo("rsz_artlanta_red"));
-    photos.add(new Photo("rsz_artlanta_events"));
+    background();
+
+    photos.add(new Photo("artlanta_red_200"));
+    photos.add(new Photo("artlanta_events_150"));
     photos.add(new Photo("youtube"));
-    photos.add(new Photo("rsz_artlanta_shop"));
+    photos.add(new Photo("artlanta_shop_200"));
+    photos.add(new Photo("red_pin_icon_200"));
 
     adapter = new MyAdapter(this, photos);
     carousel.setAdapter(adapter);
@@ -70,7 +70,9 @@ public final class MainActivity
     carousel.setOnItemClickListener(new OnItemClickListener() {
       @Override
       public void onItemClick(CarouselBaseAdapter<?> carouselBaseAdapter, View view, int position, long l) {
-        Toast.makeText(getApplicationContext(), "The item '" + position + "' has been clicked", Toast.LENGTH_SHORT).show();
+        if (position == 0) {
+          Toast.makeText(getApplicationContext(), "Press & Hold to Open" + "\r\n" + "        Swipe to Spin", Toast.LENGTH_SHORT).show();
+        }
         carousel.scrollToChild(position);
       }
     });
@@ -79,7 +81,7 @@ public final class MainActivity
 
       @Override
       public boolean onItemLongClick(CarouselBaseAdapter<?> carouselBaseAdapter, View view, int position, long id) {
-        Toast.makeText(getApplicationContext(), "The item '" + position + "' has been long clicked", Toast.LENGTH_SHORT).show();
+
         if (position == 0) {
           //code specific to first list item
           Intent myIntent = new Intent(view.getContext(), Welcome.class);
@@ -100,7 +102,13 @@ public final class MainActivity
 
         if (position == 3) {
           //code specific to first list item
-          Intent myIntent = new Intent(view.getContext(), Splash.class);
+          Intent myIntent = new Intent(view.getContext(), Store.class);
+          startActivityForResult(myIntent, 3);
+        }
+
+        if (position == 4) {
+          //code specific to first list item
+          Intent myIntent = new Intent(view.getContext(), Location.class);
           startActivityForResult(myIntent, 3);
         }
 
@@ -110,15 +118,12 @@ public final class MainActivity
 
     });
 
-    // TODO Create Floating Action Button
     // Create button w/icon
     ImageView wolveIcon = new ImageView(this);
 
     Glide.with(this)
-            .load(R.drawable.rsz_artlanta_wolve)
+            .load(R.drawable.artlanta_wolves)
             .into(wolveIcon);
-
-
 
     FloatingActionButton actionButton = new FloatingActionButton.Builder(this)
             .setContentView(wolveIcon)
@@ -129,6 +134,16 @@ public final class MainActivity
     ImageView facebookIcon = new ImageView(this);
     ImageView instagramIcon = new ImageView(this);
 
+    // TODO fit facebook icon into button
+    Glide.with(this)
+        .load(R.drawable.twitter_29)
+        .into(twitterIcon);
+    Glide.with(this)
+            .load(R.drawable.fb_29)
+            .into(facebookIcon);
+    Glide.with(this)
+            .load(R.drawable.ig_29)
+            .into(instagramIcon);
 //    twitterIcon.setImageResource(R.drawable.artlanta_yellow);
 //    facebookIcon.setImageResource(R.drawable.artlanta_red);
 //    instagramIcon.setImageResource(R.drawable.artlanta_blue);
@@ -218,6 +233,23 @@ public final class MainActivity
 //      Toast.makeText(getApplicationContext(), "instagram button clicked", Toast.LENGTH_SHORT).show();
       Intent intent = new Intent(this, Instagram.class);
       startActivity(intent);
+    }
+  }
+
+  public void background() {
+
+//    Bitmap bmp = BitmapFactory.decodeResource(getResources(),
+//            R.drawable.brush_drip_200);
+//    BitmapDrawable bitmapDrawable = new BitmapDrawable(bmp);
+////    bitmapDrawable.setGravity(Gravity.BOTTOM);
+//
+//    Carousel carousel = (Carousel) findViewById(R.id.carousel);
+//    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//      carousel.setBackground(bitmapDrawable);
+//    }
+    Drawable mainActivityBackground = getResources().getDrawable(R.drawable.brush_drip);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+      carousel.setBackground(mainActivityBackground);
     }
   }
 }

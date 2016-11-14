@@ -1,9 +1,6 @@
 package fr.rolandl.sample.carousel;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -20,22 +17,19 @@ import com.google.android.youtube.player.YouTubePlayerView;
  */
 public class Video extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
-    Button play;
-//    public YouTubePlayerView youTubePlayerView;
-    public YouTubePlayer.OnInitializedListener onInitializedListener;
-
     public static final String API_KEY = "AIzaSyAF8AHkBeBay5kGe_DGXbAbmscOO7r3ddA";
     public static final String VIDEO_ID = "PgSXNZxAfLQ";
+    public static final String PLAYLIST_ID = "PL4ahlZpnhc5DXtMm1jZqxotLsMTr35uVd";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.video_activity);
+        setContentView(R.layout.activity_video);
+        // TODO add ActionBar
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.view);
         youTubePlayerView.initialize(API_KEY, this);
-
     }
 
     @Override
@@ -50,7 +44,9 @@ public class Video extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
         player.setPlaybackEventListener(playbackEventListener);
         /** Start buffering **/
         if (!wasRestored) {
-            player.cueVideo(VIDEO_ID);
+            player.setFullscreen(true);
+            player.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
+            player.loadPlaylist(PLAYLIST_ID);
         }
     }
 
