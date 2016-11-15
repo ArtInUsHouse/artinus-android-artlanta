@@ -1,15 +1,14 @@
 package fr.rolandl.sample.carousel;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 /**
  * Created by GodfatherFrancis on 7/19/2016.
  */
-public class Store extends ActionBarActivity {
+public class Store extends AppCompatActivity {
 
     public static final String ANONYMOUS_OAUTH_TOKEN = "IQNBS3TYXBPVI43NO76R";
     public static final String PERSONAL_OAUTH_TOKEN = "2DB7O2HHUISEBAMDPUOC";
@@ -24,56 +23,11 @@ public class Store extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Log.i(TAG, "onCreate");
         setTitle("Shop ARTlanta");
 
+        // TODO fix webview
         WebView webView = (WebView) findViewById(R.id.webView);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setDomStorageEnabled(true);
-        webView.setWebViewClient(new WebViewClient() {
 
-//            new AsyncTask<Void, Void, String>() {
-//            @Override
-//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//                // shouldOverrideUrlLoading loads clickable link
-//                // w/o opening new browser while in webView
-//                view.loadUrl(url);
-//                return true;
-//            }
-
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                Log.i(TAG, "onPageFinished: " + url);
-//                view.loadUrl(url);
-            }
-        });
-        webView.loadUrl(WEBVIEW_URL);
-
-/*
-        new AsyncTask<Void, Void, String>() {
-
-            @Override
-            protected String doInBackground(Void... params) {
-
-                OkHttpClient client = new OkHttpClient();
-                Request request = new Request.Builder()
-                        .url(USER_EVENTS_URL)
-                        .build();
-
-                try {
-                    Response response = client.newCall(request).execute();
-
-                    if (response.isSuccessful()) {
-                        Log.i(TAG, response.body().string());
-                    }
-                    return response.body().string();
-                } catch (Exception e) {
-                    Log.e(TAG, "Exception caught: " + e);
-                }
-                return null;
-            }
-        }.execute();
- */
     }
 }

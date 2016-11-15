@@ -1,7 +1,7 @@
 package fr.rolandl.sample.carousel;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -9,7 +9,7 @@ import android.webkit.WebViewClient;
 /**
  * Created by Godfather on 8/14/2016.
  */
-public class Twitter extends ActionBarActivity {
+public class Twitter extends AppCompatActivity {
 
     public static final String WEBVIEW_URL = "https://twitter.com/ArtlantaGallery";
     public static final String TAG = "Twitter";
@@ -18,7 +18,6 @@ public class Twitter extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Log.i(TAG, "onCreate");
 
         WebView webView = (WebView) findViewById(R.id.webView);

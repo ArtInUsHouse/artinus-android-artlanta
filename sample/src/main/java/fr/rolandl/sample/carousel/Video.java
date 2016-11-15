@@ -26,7 +26,6 @@ public class Video extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
         // TODO add ActionBar
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.view);
         youTubePlayerView.initialize(API_KEY, this);

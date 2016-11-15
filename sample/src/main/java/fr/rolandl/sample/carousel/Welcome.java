@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -15,13 +15,12 @@ import com.bumptech.glide.Glide;
 /**
  * Created by GodfatherFrancis on 7/19/2016.
  */
-public class Welcome extends ActionBarActivity {
+public class Welcome extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         imageStatement();
 

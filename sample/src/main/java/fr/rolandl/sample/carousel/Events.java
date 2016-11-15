@@ -1,7 +1,7 @@
 package fr.rolandl.sample.carousel;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -9,7 +9,7 @@ import android.webkit.WebViewClient;
 /**
  * Created by GodfatherFrancis on 7/19/2016.
  */
-public class Events extends ActionBarActivity {
+public class Events extends AppCompatActivity {
 
     public static final String ANONYMOUS_OAUTH_TOKEN = "IQNBS3TYXBPVI43NO76R";
     public static final String PERSONAL_OAUTH_TOKEN = "2DB7O2HHUISEBAMDPUOC";
@@ -24,7 +24,6 @@ public class Events extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Log.i(TAG, "onCreate");
 
         WebView webView = (WebView) findViewById(R.id.webView);
