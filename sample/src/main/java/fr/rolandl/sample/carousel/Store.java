@@ -22,7 +22,7 @@ public class Store extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_location);
+        setContentView(R.layout.activity_store);
         Log.i(TAG, "onCreate");
         setTitle("Shop ARTlanta");
 
